@@ -1,0 +1,73 @@
+# Build results
+
+bin/
+obj/
+
+# User-specific files
+
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Rider
+
+.idea/
+
+# VS Code
+
+.vscode/
+
+# Visual Studio
+
+.vs/
+
+# Logs
+
+*.log
+
+# OS files
+
+.DS_Store
+Thumbs.db
+
+# NuGet
+
+*.nupkg
+packages/
+
+# Environment files
+
+.env
+
+# Test results
+
+TestResults/
+
+# Coverage
+
+coverage/
+*.coverage
+*.coveragexml
+
+# Publish output
+
+publish/
+
+# ASP.NET Core
+
+appsettings.Development.json
+
+# Temporary files
+
+*.tmp
+*.temp
+
+# Backup files
+
+*.bak
+
+# JetBrains
+
+_ReSharper*/
+*.DotSettings.user

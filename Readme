@@ -1,0 +1,54 @@
+## Kom igång
+
+Ladda ner repot.
+
+---
+
+## Installera packages
+
+dotnet add package Swashbuckle.AspNetCore
+dotnet new xunit -n CurrencyDeltaApi.Tests
+dotnet add CurrencyDeltaApi.Tests reference CurrencyDeltaApi.csproj
+
+---
+
+## Bygg och kör
+
+dotnet clean
+dotnet build
+dotnet run
+
+---
+
+## Testa med Postman
+
+Starta applikationen:
+dotnet run
+
+Gör en POST request till:
+[https://localhost:xxxx/currencydelta](https://localhost:xxxx/currencydelta)
+
+Sätt header:
+Content-Type: application/json
+
+Body:
+{
+"baseline": "GBP",
+"currencies": ["USD"],
+"fromDate": "2025-01-01",
+"toDate": "2025-01-10"
+}
+
+---
+
+## Kör tester
+
+## installera
+
+dotnet add package xunit
+dotnet add package xunit.runner.visualstudio
+dotnet add package Microsoft.NET.Test.Sdk
+
+## kör
+
+dotnet test
