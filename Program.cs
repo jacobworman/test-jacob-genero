@@ -122,7 +122,7 @@ public class CurrencyService : ICurrencyService
             }
 
             var delta = (toRate / fromRate) - 1;
-            delta = Math.Round(delta, 3);
+            delta = Math.Round(delta, 5);
 
             results.Add(new CurrencyDeltaResponse(currency, delta));
         }
