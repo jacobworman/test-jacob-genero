@@ -1,3 +1,9 @@
+public class RateDto
+{
+    public DateTime Date { get; set; }
+    public decimal Value { get; set; }
+}
+
 private async Task<(decimal fromRate, decimal toRate)> GetRates(
     string baseCurrency,
     string target,
