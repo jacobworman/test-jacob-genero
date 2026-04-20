@@ -1,12 +1,16 @@
 using Xunit;
+using CurrencyDeltaApi.Services;
+using CurrencyDeltaApi.DataProviders;
+using CurrencyDeltaApi.Models;
 
 public class CurrencyServiceTests
 {
-    private readonly CurrencyService _service = new(new HttpClient());
 
     [Fact]
     public async Task Should_Throw_When_ToDate_Is_Before_FromDate()
     {
+        var provider = new TestDataProvider();
+        var _service = new CurrencyService(provider);
         var request = new CurrencyRequest(
             "GBP",
             new List<string> { "USD" },
@@ -21,6 +25,8 @@ public class CurrencyServiceTests
     [Fact]
     public async Task Should_Throw_When_Currencies_Not_Unique()
     {
+        var provider = new TestDataProvider();
+        var _service = new CurrencyService(provider);
         var request = new CurrencyRequest(
             "GBP",
             new List<string> { "USD", "USD" },
@@ -35,6 +41,8 @@ public class CurrencyServiceTests
     [Fact]
     public async Task Should_Throw_When_Currency_Equals_Baseline()
     {
+        var provider = new TestDataProvider();
+        var _service = new CurrencyService(provider);
         var request = new CurrencyRequest(
             "GBP",
             new List<string> { "GBP" },

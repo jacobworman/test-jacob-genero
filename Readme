@@ -43,12 +43,4 @@ Body:
 
 ## Kör tester
 
-## installera
-
-dotnet add package xunit
-dotnet add package xunit.runner.visualstudio
-dotnet add package Microsoft.NET.Test.Sdk
-
-## kör
-
-dotnet test
+dotnet test CurrencyDeltaApi.Tests
