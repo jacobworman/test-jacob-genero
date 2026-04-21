@@ -6,9 +6,23 @@ Ladda ner repot.
 
 ## Installera packages
 
+# Install swagger
+
 dotnet add package Swashbuckle.AspNetCore
+
+# Create test project
+
 dotnet new xunit -n CurrencyDeltaApi.Tests
+
+# Add reference
+
 dotnet add CurrencyDeltaApi.Tests reference CurrencyDeltaApi.csproj
+
+# (Optional but recommended)
+
+dotnet new sln
+dotnet sln add CurrencyDeltaApi.csproj
+dotnet sln add CurrencyDeltaApi.Tests/CurrencyDeltaApi.Tests.csproj
 
 ---
 
