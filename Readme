@@ -1,51 +1,56 @@
-## Kom igång
+## 🚀 Kom igång
 
-Ladda ner repot.
+### 1. Klona repot
 
----
-
-## Installera packages
-
-# Install swagger
-
-dotnet add package Swashbuckle.AspNetCore
-
-# Create test project
-
-dotnet new xunit -n CurrencyDeltaApi.Tests
-
-# Add reference
-
-dotnet add CurrencyDeltaApi.Tests reference CurrencyDeltaApi.csproj
-
-# (Optional but recommended)
-
-dotnet new sln
-dotnet sln add CurrencyDeltaApi.csproj
-dotnet sln add CurrencyDeltaApi.Tests/CurrencyDeltaApi.Tests.csproj
+git clone <repo-url>
+cd test-jacob-genero
 
 ---
 
-## Bygg och kör
+## 📦 Installation
 
-dotnet clean
-dotnet build
-dotnet run
+Installera beroenden:
+
+dotnet restore test-jacob-genero.sln
+
+⚠️ Projektet använder Swagger via Swashbuckle. Alla paket finns redan definierade i `.csproj`.
 
 ---
 
-## Testa med Postman
+## 🛠️ Bygg och kör
+
+dotnet clean test-jacob-genero.sln
+dotnet build test-jacob-genero.sln
+dotnet run --project CurrencyDeltaApi.csproj
+
+---
+
+## 🌐 Swagger UI
+
+När applikationen körs, öppna:
+
+https://localhost:xxxx/swagger
+
+Där kan du testa API:et direkt i webbläsaren.
+
+---
+
+## 📮 Testa med Postman
 
 Starta applikationen:
-dotnet run
+
+dotnet run --project CurrencyDeltaApi.csproj
 
 Gör en POST request till:
-[https://localhost:xxxx/currencydelta](https://localhost:xxxx/currencydelta)
 
-Sätt header:
+https://localhost:xxxx/currencydelta
+
+### Headers
+
 Content-Type: application/json
 
-Body:
+### Body
+
 {
 "baseline": "GBP",
 "currencies": ["USD"],
@@ -55,6 +60,29 @@ Body:
 
 ---
 
-## Kör tester
+## 🧪 Kör tester
 
-dotnet test CurrencyDeltaApi.Tests
+dotnet test test-jacob-genero.sln
+
+---
+
+## 📁 Projektstruktur
+
+/test-jacob-genero
+├── CurrencyDeltaApi.csproj
+├── CurrencyDeltaApi.Tests/
+├── Controllers/
+├── Services/
+├── Models/
+└── test-jacob-genero.sln
+
+---
+
+## ⚠️ Viktigt
+
+- Använd endast _Swashbuckle.AspNetCore_ för Swagger
+- Kombinera inte med Microsoft.AspNetCore.OpenApi (orsakar dependency-konflikter)
+- Om problem uppstår, kör:
+
+  dotnet clean test-jacob-genero.sln
+  dotnet restore test-jacob-genero.sln --no-cache
